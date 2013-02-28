@@ -16,8 +16,7 @@ The package supports Demandware Script embedded within `.isml` files. The code i
 * Within "MoneySquiggles" notation eg: `${product.ID}`
 * Within `<isscript>` tags eg: `<isscript>importScript('util/myCoolHelper.ds');</isscript>`
 
-#theme_modifications Theme Modifications
----
+## Theme Modifications ##
 
 The following JSON needs to be added to your theme of choice. (then built into a .tmTheme) in order to fully support the embedded Demandware Script syntax. Feel free to change the hex colors and settings for each item. This was just what worked well with the default 'Sunburst' theme.
 
