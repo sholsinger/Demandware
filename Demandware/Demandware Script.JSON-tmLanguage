@@ -1,0 +1,28 @@
+{ "name": "Demandware Script",
+  "scopeName": "source.dwscript",
+  "fileTypes": ["dwscript"],
+  "patterns": [
+  	{
+  		"include": "source.js"
+  	},
+  	{
+  		"match": "(importPackage|importScript)",
+  		"name": "support.function"
+  	},
+  	{
+  		"begin": "(dw\\.(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\\.([A-Z]{1}[a-zA-Z0-9-_]*))?)",
+  		"beginCaptures": {
+  			"1": {"name": "entity.name.tag.namespace"},
+  			"2": {"name": "support.type"}
+  		},
+  		"end": "(\\s|\\.)",
+  		"patterns": [
+  		]
+  	},
+  	{
+  		"match": "PIPELET_(ERROR|NEXT)",
+  		"name": "constant"
+  	}
+  ],
+  "uuid": "253fe05e-a2cc-44e1-be30-c214c9ed4c13"
+}

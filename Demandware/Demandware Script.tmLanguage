@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>dwscript</string>
+	</array>
+	<key>name</key>
+	<string>Demandware Script</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>source.js</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(importPackage|importScript)</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(dw\.(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\.([A-Z]{1}[a-zA-Z0-9-_]*))?)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.namespace</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.type</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\s|\.)</string>
+			<key>patterns</key>
+			<array>
+			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>PIPELET_(ERROR|NEXT)</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.dwscript</string>
+	<key>uuid</key>
+	<string>253fe05e-a2cc-44e1-be30-c214c9ed4c13</string>
+</dict>
+</plist>
