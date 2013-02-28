@@ -68,6 +68,21 @@
             ]
         }, 
         {
+            "begin": "<!---|<iscomment>",
+            "captures": {
+                "0": {
+                    "name": "punctuation.definition.comment.isml"
+                }
+            },
+            "end": "---\\s*>|</iscomment>",
+            "name": "comment.block.isml",
+            "patterns": [
+                {
+                    "include": "#embedded-code"
+                }
+            ]
+        },
+        {
             "begin": "<!--", 
             "captures": {
                 "0": {
@@ -85,7 +100,7 @@
                     "include": "#embedded-code"
                 }
             ]
-        }, 
+        },
         {
             "begin": "<!", 
             "captures": {
