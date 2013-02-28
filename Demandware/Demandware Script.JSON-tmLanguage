@@ -1,6 +1,6 @@
 { "name": "Demandware Script",
   "scopeName": "source.dwscript",
-  "fileTypes": ["dwscript"],
+  "fileTypes": ["ds"],
   "patterns": [
   	{
   		"include": "source.js"

@@ -4,7 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>dwscript</string>
+		<string>ds</string>
 	</array>
 	<key>name</key>
 	<string>Demandware Script</string>
