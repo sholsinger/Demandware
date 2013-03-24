@@ -54,4 +54,12 @@ The following JSON needs to be added to your theme of choice. (then built into a
         "settings": {
             "foreground": "#ffffff"
         }
+    },
+    {
+        "name": "Entity",
+        "scope": "source.dwscript.embedded entity.name.tag.dwscript, punctuation.definition.tag.isml",
+        "settings": {
+            "fontStyle": "",
+            "foreground": "#89BDFF"
+        }
     }
