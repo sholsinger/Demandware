@@ -3,8 +3,8 @@
         "isml"
     ], 
     "firstLineMatch": "<!(?i:DOCTYPE)|<(?i:html)|<\\?(?i:php)", 
-    "foldingStartMarker": "(?x)\n\t\t(<(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript)\\b.*?>\n\t\t|<!--(?!.*--\\s*>)\n\t\t|^<!--\\ \\#tminclude\\ (?>.*?-->)$\n\t\t|<\\?(?:php)?.*\\b(if|for(each)?|while)\\b.+:\n\t\t|\\{\\{?(if|foreach|capture|literal|foreach|php|section|strip)\n\t\t|\\{\\s*($|\\?>\\s*$|//|/\\*(.*\\*/\\s*$|(?!.*?\\*/)))\n\t\t)", 
-    "foldingStopMarker": "(?x)\n\t\t(</(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript)>\n\t\t|^(?!.*?<!--).*?--\\s*>\n\t\t|^<!--\\ end\\ tminclude\\ -->$\n\t\t|<\\?(?:php)?.*\\bend(if|for(each)?|while)\\b\n\t\t|\\{\\{?/(if|foreach|capture|literal|foreach|php|section|strip)\n\t\t|^[^{]*\\}\n\t\t)", 
+    "foldingStartMarker": "(?x)\n\t\t(<(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript|isloop)\\b.*?>\n\t\t|<!--(?!.*--\\s*>)\n\t\t|^<!--\\ \\#tminclude\\ (?>.*?-->)$\n\t\t|<\\?(?:php)?.*\\b(if|for(each)?|while)\\b.+:\n\t\t|\\{\\{?(if|foreach|capture|literal|foreach|php|section|strip)\n\t\t|\\{\\s*($|\\?>\\s*$|//|/\\*(.*\\*/\\s*$|(?!.*?\\*/)))\n\t\t)", 
+    "foldingStopMarker": "(?x)\n\t\t(</(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript|isloop)>\n\t\t|^(?!.*?<!--).*?--\\s*>\n\t\t|^<!--\\ end\\ tminclude\\ -->$\n\t\t|<\\?(?:php)?.*\\bend(if|for(each)?|while)\\b\n\t\t|\\{\\{?/(if|foreach|capture|literal|foreach|php|section|strip)\n\t\t|^[^{]*\\}\n\t\t)", 
     "keyEquivalent": "^~I", 
     "name": "ISML",
     "patterns": [
@@ -76,11 +76,7 @@
             },
             "end": "---\\s*>|</iscomment>",
             "name": "comment.block.isml",
-            "patterns": [
-                {
-                    "include": "#embedded-code"
-                }
-            ]
+            "patterns": []
         },
         {
             "begin": "<!--", 
@@ -180,16 +176,16 @@
             ]
         },
         {
-            "begin": "(?:^\\s+)?(<)(?i:isscript)(>)",
+            "begin": "(?:^\\s+)?(<)((?i:isscript))\\b([^>]*(>))",
             "beginCaptures": {
                 "1": {"name": "punctuation.definition.tag.isml"},
-                "2": {"name": "entity.name.tag.script.isml"},
+                "2": {"name": "entity.name.tag.dwscript.isml"},
                 "3": {"name": "punctuation.definition.tag.isml"}
             },
-            "end": "(?:^\\s+)?(<\/)(?i:isscript)(>)",
+            "end": "(?:^\\s+)?(</)((?i:isscript))\\b([^>]*(>))",
             "endCaptures": {
                 "1": {"name": "punctuation.definition.tag.isml"},
-                "2": {"name": "entity.name.tag.script.isml"},
+                "2": {"name": "entity.name.tag.dwscript.isml"},
                 "3": {"name": "punctuation.definition.tag.isml"}
             },
             "name": "source.dwscript.embedded.isml",

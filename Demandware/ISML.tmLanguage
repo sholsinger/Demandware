@@ -10,7 +10,7 @@
 	<string>&lt;!(?i:DOCTYPE)|&lt;(?i:html)|&lt;\?(?i:php)</string>
 	<key>foldingStartMarker</key>
 	<string>(?x)
-		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript)\b.*?&gt;
+		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript|isloop)\b.*?&gt;
 		|&lt;!--(?!.*--\s*&gt;)
 		|^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
 		|&lt;\?(?:php)?.*\b(if|for(each)?|while)\b.+:
@@ -19,7 +19,7 @@
 		)</string>
 	<key>foldingStopMarker</key>
 	<string>(?x)
-		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript)&gt;
+		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|iscomment|isif|isscript|isloop)&gt;
 		|^(?!.*?&lt;!--).*?--\s*&gt;
 		|^&lt;!--\ end\ tminclude\ --&gt;$
 		|&lt;\?(?:php)?.*\bend(if|for(each)?|while)\b
@@ -141,10 +141,6 @@
 			<string>comment.block.isml</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#embedded-code</string>
-				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -298,7 +294,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)(?i:isscript)(&gt;)</string>
+			<string>(?:^\s+)?(&lt;)((?i:isscript))\b([^&gt;]*(&gt;))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -309,7 +305,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.script.isml</string>
+					<string>entity.name.tag.dwscript.isml</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -318,7 +314,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?:^\s+)?(&lt;/)(?i:isscript)(&gt;)</string>
+			<string>(?:^\s+)?(&lt;/)((?i:isscript))\b([^&gt;]*(&gt;))</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -329,7 +325,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.script.isml</string>
+					<string>entity.name.tag.dwscript.isml</string>
 				</dict>
 				<key>3</key>
 				<dict>
