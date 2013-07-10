@@ -1,28 +1,38 @@
 { "name": "Demandware Script",
   "scopeName": "source.dwscript",
   "fileTypes": ["ds"],
+  "repository": {
+    "dwscript-type": {
+      "begin": "(:\\s*?)?((?:dw\\.){1}(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\\s|\\.)?([A-Z]{1}[a-zA-Z0-9-_]+)?)",
+      "beginCaptures": {
+        "1": {"name": "punctuation"},
+        "2": {"name": "support.namespace.dwscript"},
+        "3": {"name": "support.class.dwscript"}
+      },
+      "end": "(?:|\\s|\\.|,)",
+      "endCaptures": {},
+      "name": "support.class.dwscript"
+    }
+  },
   "patterns": [
   	{
   		"include": "source.js"
   	},
   	{
-  		"match": "(importPackage|importScript)",
-  		"name": "support.function"
+  		"match": "(importPackage|importScript|trace)",
+  		"name": "support.function.dwscript"
   	},
-  	{
-  		"begin": "(dw\\.(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\\.([A-Z]{1}[a-zA-Z0-9-_]*))?)",
-  		"beginCaptures": {
-  			"1": {"name": "entity.name.tag.namespace"},
-  			"2": {"name": "support.type"}
-  		},
-  		"end": "(\\s|\\.)",
-  		"patterns": [
-  		]
-  	},
+    {
+      "match": "(PipelineDictionary|\\sFile(?:\\s|[^\\w]))",
+      "name": "support.type.dwscript"
+    },
   	{
   		"match": "PIPELET_(ERROR|NEXT)",
-  		"name": "constant"
-  	}
+  		"name": "support.constant.dwscript"
+  	},
+    {
+      "include": "#dwscript-type"
+    }
   ],
   "uuid": "253fe05e-a2cc-44e1-be30-c214c9ed4c13"
 }

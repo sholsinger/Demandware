@@ -16,39 +16,60 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(importPackage|importScript)</string>
+			<string>(importPackage|importScript|trace)</string>
 			<key>name</key>
-			<string>support.function</string>
+			<string>support.function.dwscript</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>(dw\.(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\.([A-Z]{1}[a-zA-Z0-9-_]*))?)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.namespace</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>support.type</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(\s|\.)</string>
-			<key>patterns</key>
-			<array>
-			</array>
+			<key>match</key>
+			<string>(PipelineDictionary|\sFile(?:\s|[^\w]))</string>
+			<key>name</key>
+			<string>support.type.dwscript</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>PIPELET_(ERROR|NEXT)</string>
 			<key>name</key>
-			<string>constant</string>
+			<string>support.constant.dwscript</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#dwscript-type</string>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>dwscript-type</key>
+		<dict>
+			<key>begin</key>
+			<string>(:\s*?)?((?:dw\.){1}(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\s|\.)?([A-Z]{1}[a-zA-Z0-9-_]+)?)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.namespace.dwscript</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.dwscript</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?:|\s|\.|,)</string>
+			<key>endCaptures</key>
+			<dict>
+			</dict>
+			<key>name</key>
+			<string>support.class.dwscript</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.dwscript</string>
 	<key>uuid</key>
