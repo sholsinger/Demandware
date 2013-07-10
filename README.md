@@ -18,7 +18,10 @@ The package supports Demandware Script embedded within `.isml` files. The code i
 
 ## Theme Modifications ##
 
-The following JSON needs to be added to your theme of choice. (then built into a .tmTheme) in order to fully support the embedded Demandware Script syntax. Feel free to change the hex colors and settings for each item. This was just what worked well with the default 'Sunburst' theme.
+The following JSON needs to be added to your theme of choice. (then built into a .tmTheme) in 
+order to fully support the embedded Demandware Script syntax. Feel free to change the hex 
+colors and settings for each item. This was just what I felt worked well with the default 
+'Sunburst' theme.
 
 	,
     {
