@@ -72,7 +72,7 @@ class TagCompletions(sublime_plugin.EventListener):
 
         return ([
             ("isif\tTag", "isif condition=\"\${$1}\">\n$2\n</isif>"),
-            ("isloop\tTag", "isloop items=\"\${$1}\" var=\"\${$2}\">\n\t$3\n</isloop>"),
+            ("isloop\tTag", "isloop items=\"\${$1}\" var=\"\$2\">\n\t$3\n</isloop>"),
             ("iscomment\tTag", "iscomment>$1</iscomment>"),
             ("isscript\tTag", "isscript>\n\t$1\n</isscript>"),
             ("isset\tTag", "isset name=\"$1\" value=\"\${$2}\" scope=\"${3:page}\" />"),
