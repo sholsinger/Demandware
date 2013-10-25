@@ -3,10 +3,18 @@
 
 	"completions":
 	[
-		{"trigger": "isif", "contents": "<isif condition=\"\\${$1}\">\n$2\n</isif>"},
-        {"trigger": "isloop", "contents": "<isloop items=\"\\${$1}\" var=\"\\${$2}\">\n\t$3\n</isloop>"},
+		{"trigger": "isif", "contents": "<isif condition=\"\\${$1}\">\n\t$2\n</isif>"},
+        {"trigger": "isloop", "contents": "<isloop items=\"\\${$1}\" var=\"$2\">\n\t$3\n</isloop>"},
         {"trigger": "iscomment", "contents": "<iscomment>$1</iscomment>"},
         {"trigger": "isscript", "contents": "<isscript>\n\t$1\n</isscript>"},
+        {"trigger": "isbreak", "contents": "<isbreak />"},
+        {"trigger": "iscontinue", "contents": "<iscontinue/>"},
+        {"trigger": "iscache", "contents": "<iscache type=\"${1:relative|daily}\"${2: status=\"on\" varyby=\"price_promotion\"}/>"},
+        {"trigger": "iscontent", "contents": "<iscontent type=\"${1:text/html}\" charset=\"${2:utf-8}\" encoding=\"${3:on|off|html|xml|wml}\" compact=\"true\"/>"},
+        {"trigger": "isdecorate", "contents": "<isdecorate template=\"${1:path/to/template}\">\n\t$2\n</isdecorate>"},
+        {"trigger": "isinclude", "contents": "<isinclude${1: template=\"${2:path/to/template}\"}${3: url=\"\\${URLUtils.url($4)}\"}/>"},
+        {"trigger": "iselse", "contents": "<iselse/>"},
+        {"trigger": "iselseif", "contents": "<iselseif condition=\"\\${$1}\">\n\t$2\n</iselseif>\n<iselse/>"},
 		{ "trigger": "a", "contents": "<a href=\"$1\">$2</a>" },
 		{ "trigger": "abbr", "contents": "<abbr>$1</abbr>" },
 		{ "trigger": "acronym", "contents": "<acronym>$1</acronym>" },
