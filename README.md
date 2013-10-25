@@ -4,10 +4,18 @@ A package for Sublime Text that provides syntaxes for ISML and Demandware Script
 
 ## ISML Tag Tab-completion ##
 
-* `isset`
-* `isscript`
 * `isloop`
 * `isif`
+* `isscript`
+* `isset`
+* `isbreak`
+* `iscontinue`
+* `iscache`
+* `iscontent`
+* `isdecorate`
+* `isinclude`
+* `iselse`
+* `iselseif`
 
 ## Demandware Script Syntax Embedding ##
 
