@@ -11,16 +11,25 @@ A package for Sublime Text that provides syntaxes for ISML and Demandware Script
 
 ## Demandware Script Syntax Embedding ##
 
-The package supports Demandware Script embedded within `.isml` files. The code is colored if you have the theme modifications in place. (see "Theme Modifications" section)
+The package supports Demandware Script embedded within `.isml` files. The code is colored
+with one exception. (see "Theme Modifications" section)
 
 * Within "MoneySquiggles" notation eg: `${product.ID}`
 * Within `<isscript>` tags eg: `<isscript>importScript('util/myCoolHelper.ds');</isscript>`
 
 ## Theme Modifications ##
 
-The following JSON needs to be added to your theme of choice. (then built into a .tmTheme) in 
-order to fully support the embedded Demandware Script syntax. Feel free to change the hex 
-colors and settings for each item. This was just what I felt worked well with the default 
+*Note* theme modification is only required if you desire code within quotes to be colorized. eg:
+
+    <isset name="customer" value="${pdict.CurrentCustomer.profile}" scope="page" />
+
+Code within `<isscript></isscript>` tags will be colorized normally. The one theme addition
+I do recommend is the first rule which sets foreground/background color for
+`source.dwscript.embedded`.
+
+The following JSON illustrates some example additions to the theme of your choice. (then built into a .tmTheme ala [AAAPackageDev][] ) in
+order to fully support the embedded Demandware Script syntax. Feel free to change the hex
+colors and settings for each item. This was just what I felt worked well with the default
 'Sunburst' theme.
 
 	,
@@ -66,3 +75,10 @@ colors and settings for each item. This was just what I felt worked well with th
             "foreground": "#89BDFF"
         }
     }
+
+## Contributing ##
+
+I welcome contributors. If you feel something needs to be added or fixed then please create an issue for it. If you want to fix an issue then fork the repository, fix it, and submit a pull request. If you have something you'd like to contribute please fork the repository, commit your contribution, and submit a pull request.
+
+
+[AAAPackageDev]: http://github.com/SublimeText/AAAPackageDev
