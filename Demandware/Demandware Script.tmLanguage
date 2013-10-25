@@ -42,13 +42,13 @@
 		<key>dwscript-type</key>
 		<dict>
 			<key>begin</key>
-			<string>(:\s*?)?((?:dw\.){1}(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\s|\.)?([A-Z]{1}[a-zA-Z0-9-_]+)?)</string>
+			<string>((?:dw\.){1}(?:campaign|catalog|content|crypto|customer|io|net|object|oms|order|rpc|system|util|value|web)(?:\s|\.)?([A-Z]{1}[a-zA-Z0-9-_]+)?)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation</string>
+					<string>support.type.dwscript</string>
 				</dict>
 				<key>2</key>
 				<dict>
