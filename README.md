@@ -2,7 +2,9 @@
 
 A package for Sublime Text that provides syntaxes for ISML and Demandware Script. Supported functionality is outlined below.
 
-## ISML Tag Tab-completion ##
+## Features ##
+
+### ISML Tag Tab-completion ###
 
 * `isloop`
 * `isif`
@@ -17,7 +19,7 @@ A package for Sublime Text that provides syntaxes for ISML and Demandware Script
 * `iselse`
 * `iselseif`
 
-## Demandware Script Syntax Embedding ##
+### Demandware Script Syntax Embedding ###
 
 The package supports Demandware Script embedded within `.isml` files. The code is colored
 with one exception. (see "Theme Modifications" section)
@@ -25,7 +27,46 @@ with one exception. (see "Theme Modifications" section)
 * Within "MoneySquiggles" notation eg: `${product.ID}`
 * Within `<isscript>` tags eg: `<isscript>importScript('util/myCoolHelper.ds');</isscript>`
 
-## Theme Modifications ##
+## Compatability ##
+
+This plugin has been tested with Sublime Text 2 and Sublime Text 3 beta.
+
+## Installation ##
+
+*Note: If you have Package Control installed skip to the section called "Installing with Package Control (Recommended)".*
+
+The basic installation is pretty simple. Note you need to replace <kbd>&lt;InsertVersionNumberHere&gt;</kbd> with either <kbd>2</kbd> or <kbd>3</kbd> depending on the version of Sublime Text you use.
+
+```
+# For OSX
+$ git clone https://github.com/sholsinger/Demandware.sublime-package.git \
+  ~/Library/Application\ Support/Sublime\ Text\ <InsertVersionNumberHere>/Packages/Demandware
+```
+```
+# For Windows
+C:\ git clone https://github.com/sholsinger/Demandware.sublime-package.git %APPDATA%\Sublime Text <InsertVersionNumberHere>\Demandware
+```
+```
+# For Linux/Unix
+$ git clone https://github.com/sholsinger/Demandware.sublime-package.git ~/.Sublime\ Text\ <InsertVersionNumberhere>\Demandware
+```
+
+You may need to restart Sublime Text in order for the plugin to automatically colorize the right files.
+
+To update the package you can simply <kbd>cd</kbd> into the package directory and run <kbd>git pull</kbd>.
+
+### Installing with Package Control (Recommended) ###
+
+1. Type <kbd>Cmd+Shift+P</kbd> on a Mac or <kbd>Ctrl+Shift+P</kbd> on Windows/Linux and type <kbd>Package Control</kbd>.
+2. Select the "Package Control: Add Repository" option.
+3. When prompted paste in the following url:
+  ```
+  https://github.com/sholsinger/Demandware.sublime-package.git
+  ```
+
+Updates are handled using the "Package Control: Upgrade Package" command.
+
+### Theme Modifications ###
 
 *Note* theme modification is only required if you desire code within quotes to be colorized. eg:
 
@@ -83,6 +124,14 @@ colors and settings for each item. This was just what I felt worked well with th
             "foreground": "#89BDFF"
         }
     }
+
+## Roadmap ##
+
+Ultimately my goal is to be able to do 90% of my Demandware development without Eclipse running. My secondary goal with the project is to provide an alternative editor option to all Demandware developers. To that end the following features are on the roadmap:
+
+* WebDAV upload on change
+* Full WebDAV upload command
+* Modifications to the repo for submission to Package Manager
 
 ## Contributing ##
 
