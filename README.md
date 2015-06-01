@@ -39,16 +39,16 @@ The basic installation is pretty simple. Note you need to replace <kbd>&lt;Inser
 
 ```
 # For OSX
-$ git clone https://github.com/sholsinger/Demandware.sublime-package.git \
+$ git clone https://github.com/sholsinger/Demandware.git \
   ~/Library/Application\ Support/Sublime\ Text\ <InsertVersionNumberHere>/Packages/Demandware
 ```
 ```
 # For Windows
-C:\ git clone https://github.com/sholsinger/Demandware.sublime-package.git %APPDATA%\Sublime Text <InsertVersionNumberHere>\Demandware
+C:\ git clone https://github.com/sholsinger/Demandware.git %APPDATA%\Sublime Text <InsertVersionNumberHere>\Demandware
 ```
 ```
 # For Linux/Unix
-$ git clone https://github.com/sholsinger/Demandware.sublime-package.git ~/.Sublime\ Text\ <InsertVersionNumberhere>\Demandware
+$ git clone https://github.com/sholsinger/Demandware.git ~/.Sublime\ Text\ <InsertVersionNumberhere>\Demandware
 ```
 
 You may need to restart Sublime Text in order for the plugin to automatically colorize the right files.
@@ -61,7 +61,7 @@ To update the package you can simply <kbd>cd</kbd> into the package directory an
 2. Select the "Package Control: Add Repository" option.
 3. When prompted paste in the following url:
   ```
-  https://github.com/sholsinger/Demandware.sublime-package.git
+  https://github.com/sholsinger/Demandware.git
   ```
 
 Updates are handled using the "Package Control: Upgrade Package" command.
