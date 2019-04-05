@@ -2,6 +2,8 @@
 
 A package for Sublime Text that provides syntaxes for ISML and Demandware Script. Supported functionality is outlined below.
 
+*Note* This repository is considered deprecated. You should instead consider using VSCode with Prophet: [https://marketplace.visualstudio.com/items?itemName=SqrTT.prophet]()
+
 ## Features ##
 
 ### ISML Tag Tab-completion ###
